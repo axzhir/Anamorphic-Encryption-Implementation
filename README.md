@@ -21,7 +21,7 @@ This project demonstrates two core concepts of Anamorphic Encryption:
     * Allows a sender to embed a *covert message* ($m_1$) for an intended recipient, even when forced to send a *specific overt message* ($m_0$) to another party.
     * The simplified implementation uses a "rejection sampling" approach, which is conceptually sound but highly inefficient for multi-bit messages. The paper discusses more advanced, efficient methods like those based on Lattice-LWE.
 
-## Core Concepts Demonstrated
+## Core Concepts demonstrated
 
 * **Overt Message ($m_0$):** The plausible, innocent message visible to the dictator.
 * **Covert Message ($m_1$):** The secret message hidden from the dictator.
@@ -43,7 +43,7 @@ This project demonstrates two core concepts of Anamorphic Encryption:
     ```
 3.  **Run the demonstration script:**
     ```bash
-    python demo.py
+    python demo_file.py
     ```
     The script will print outputs showing the key generation, encryption, and decryption processes from both the dictator's (overt) and the legitimate receiver's (covert) perspectives.
 
@@ -55,7 +55,7 @@ This project demonstrates two core concepts of Anamorphic Encryption:
     * `receiver_am.py`: Implementation of the Receiver-Anamorphic Encryption using the base PKE and NIZK mock.
     * `sender_am.py`: A simplified conceptual implementation of Sender-Anamorphic Encryption using rejection sampling.
     * `utils.py`: Helper functions for cryptographic operations (e.g., modular exponentiation, prime generation, hashing).
-* `demo.py`: The main script to run and demonstrate the Anamorphic Encryption flows.
+* `demo_file.py`: The main script to run and demonstrate the Anamorphic Encryption flows.
 * `requirements.txt`: Lists Python package dependencies.
 * `README.md`: This file.
 * `LICENSE`: The MIT License for the project.
@@ -66,7 +66,7 @@ This project demonstrates two core concepts of Anamorphic Encryption:
 * **Simplified Cryptography:** The `base_pke.py` (ElGamal) is simplified for clarity and demonstration. For real-world security, more robust implementations, proper padding, and larger key sizes would be necessary.
 * **Sender-AM Efficiency:** The `sender_am.py` implementation uses rejection sampling, which is very inefficient for multi-bit covert messages (as noted in the paper, its runtime can be exponential in message length). More practical Sender-AM schemes rely on advanced techniques like LWE.
 * **Message Representation:** Messages are converted to integers for encryption. In a real system, robust encoding and decoding (e.g., using OAEP for ElGamal) would be crucial.
-* **Security Parameter (`LAMBDA_BITS`):** The `demo.py` uses a small `LAMBDA_BITS` (256) for quick execution. For any real cryptographic application, this value should be much higher (e.g., 1024-2048 bits).
+* **Security Parameter (`LAMBDA_BITS`):** The `demo_file.py` uses a small `LAMBDA_BITS` (256) for quick execution. For any real cryptographic application, this value should be much higher (e.g., 1024-2048 bits).
 
 ## Author
 
